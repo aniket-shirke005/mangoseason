@@ -1,3 +1,5 @@
+"use server"
+
 import {prisma} from "@/lib/prisma"
 // import { convertToPlainObject } from "../utils";
 import { LATEST_PRODUCT_LIMIT } from "@/lib/constants";
@@ -22,5 +24,13 @@ export async function getLatestProducts() {
     }finally{
         prisma.$disconnect()
     }
- 
+}
+
+
+// get a single product by its slug
+
+export async function getProductBySlug(slug:string){
+    return await prisma.product.findFirst({
+        where : {slug:slug},
+    })
 }
