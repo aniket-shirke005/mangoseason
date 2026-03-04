@@ -1,11 +1,11 @@
-import React from 'react'
-import { Button } from "@/components/ui/button"
 import ProductList from '@/components/shared/product/product-list'
-import sampleData from '@/db/sample-data'
+import { getLatestProducts } from '@/lib/actions/product.actions'
 
-const HomePage = () => {
+const HomePage = async () => {
+  const products = await getLatestProducts()
+
   return (
-    <ProductList data={sampleData.products} title='Newest products' limit={4}/>
+    <ProductList data={products} title='Newest products'/>
   )
 }
 
