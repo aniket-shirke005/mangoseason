@@ -14,6 +14,7 @@ export async function getLatestProducts() {
         return convertToPlainObject(data) 
     } catch (error) {
         console.error(error,'prisma error for getting products')
+        return []
     }finally{
         prisma.$disconnect()
     }

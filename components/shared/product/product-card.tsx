@@ -5,7 +5,7 @@ import React from "react";
 import ProductPrice from "./product-price";
 import { Product } from "@/types";
 
-const ProductCard = ({product}:{product:Product}) => {
+const ProductCard = ({product}:{product:any}) => {
     return (
         <Card className="w-full max-w-sm">
             <CardHeader className="p-0 items-center">
